@@ -1,0 +1,47 @@
+class Solution {
+public:
+    bool hasDuplicate(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        // n**2 solutions
+        // for(int i = 0;i<nums.size();i++)
+        // {
+        //     for(int j = i+1 ;j<nums.size();j++)
+        //     {
+        //         if(nums[i]==nums[j])
+        //         {
+        //             return true;
+        //         }
+        //     }
+        // }
+        // return false;
+
+
+        // O(n) solutions
+
+        for(int i =1;i<nums.size();i++)
+        {
+            
+            if(nums[i]==nums[i-1])
+            {
+                return true;
+            }
+        }
+
+       return false;
+     // other solution is checking the count
+    //  unordered_map<int,int>mp;
+    //  for(auto it:nums)
+    //  {
+    //     mp[it]++;
+    //  }
+    //  for(auto i:mp)
+    //  {
+    //     if(i.first>1)
+    //     {
+    //         return true;
+    //     }
+       
+    //  }
+    //      return false;
+    }
+};
